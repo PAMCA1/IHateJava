@@ -4,6 +4,7 @@
 package submarinoyellow;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
+import java.io.*;
 
 public class SubmarinoYellow {
 
@@ -70,8 +71,11 @@ public class SubmarinoYellow {
     }
 
     public static void print(String string) {  //atalho para o System.out.println()
-        System.out.println(string);
-        return;
+        try {  
+            System.out.println(new String(string.getBytes("ISO-8859-1"), "UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            System.out.println("Tipo incorreta de codificação!");
+        }
     }
 
     public static void clean() {  //atalho para limpar o console
