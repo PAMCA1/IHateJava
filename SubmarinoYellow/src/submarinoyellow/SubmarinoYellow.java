@@ -138,6 +138,10 @@ public class SubmarinoYellow {
         }
     }
 
+
+    //FUNÇÕES UTEIS
+
+
     public static void print(String string) {  //atalho para o System.out.println()
         try {  
             System.out.println(new String(string.getBytes("ISO-8859-1"), "UTF-8")); //codifica para aceitar acentos e caracteres do latim
