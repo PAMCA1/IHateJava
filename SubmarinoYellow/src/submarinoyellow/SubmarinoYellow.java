@@ -63,22 +63,14 @@ public class SubmarinoYellow {
                     }
                     break;
                 case 2: //listagem
-                    int i;
-                    if (prodNum == 0) {
-                        print("Nenhum produto cadastrado!");
+                    listar(prodNum,nomes,valores);
 
-                    } else {
+                    print("Insira algo para sair:");
+                    String sair = entrada.next();
 
-                        for (i = 0; i < prodNum; i++) {
-                            print((i + 1) + "º Produto:\nNome - " + nomes[i] + "\nValor - " + valores[i] + "\n");
-                        }
-                        
-                        print("Insira algo para sair:");
-                        String sair = entrada.next();
-                     }
                     break;
                 case 3: //venda
-                    //listar os produtos aqui também
+                    listar(prodNum,nomes,valores);
 
                     int vendaTemp;
 
@@ -114,6 +106,19 @@ public class SubmarinoYellow {
             }
 
         } while(exit != true);
+    }
+
+    public static void listar(int num, String[] nome, Double[] valor) {
+        Scanner entrada = new Scanner(System.in);
+
+        if (num == 0) {
+            print("Nenhum produto cadastrado!");
+        }
+        else {
+            for (int i = 0; i < num; i++) {
+                print((i + 1) + "º Produto:\nNome - " + nome[i] + "\nValor - " + valor[i] + "\n");
+            }
+        }
     }
 
     public static void print(String string) {  //atalho para o System.out.println()
