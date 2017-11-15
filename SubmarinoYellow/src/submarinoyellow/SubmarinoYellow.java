@@ -108,7 +108,7 @@ public class SubmarinoYellow {
         } while(exit != true);
     }
 
-    public static void listar(int num, String[] nome, Double[] valor) {
+    public static void listar(int num, String[] nome, Double[] valor) { //método para listagem dos itens cadastrados
         Scanner entrada = new Scanner(System.in);
 
         if (num == 0) {
