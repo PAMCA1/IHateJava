@@ -1,5 +1,3 @@
-# IHateJava
-
 <h2>ADIÇÕES PENDENTES:</h2>
 
 <ul>
