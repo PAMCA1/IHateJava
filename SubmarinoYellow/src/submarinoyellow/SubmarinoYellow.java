@@ -130,7 +130,6 @@ public class SubmarinoYellow {
 
         if (num == 0) {
             print("Nenhum produto cadastrado!");
-            sleep(2000);
         }
         else {
             for (int i = 0; i < num; i++) {
