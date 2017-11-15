@@ -61,45 +61,61 @@ public class SubmarinoYellow {
                         print("Número máximo de cadastros atingido!");
                         sleep(2000);
                     }
+
                     break;
+
                 case 2: //listagem
                     listar(prodNum,nomes,valores);
 
                     print("Insira algo para sair:");
                     String sair = entrada.next();
 
-                    break;
+                    break;         
+                
                 case 3: //venda
-                    listar(prodNum,nomes,valores);
+                    if(prodNum!=0) {
+                        listar(prodNum,nomes,valores);
 
-                    int vendaTemp;
+                        int vendaTemp;
 
-                    if(vendasNum<100) {
-                        print("Insira o código do produto que deseja comprar:");
+                        if(vendasNum<100) {
+                            print("Insira o código do produto que deseja comprar:");
 
-                        vendaTemp = entrada.nextInt();
+                            vendaTemp = entrada.nextInt();
 
-                        if(vendaTemp < (prodNum + 1)) {
-                            vendas[vendasNum] = vendaTemp;
-                            print("Compra Cadastrada!");
-                            vendasNum++;
-                            sleep(2000);
+                            clean();
+                            
+                            if(vendaTemp < (prodNum + 1)) {
+                                vendas[vendasNum] = vendaTemp;
+                                print("Compra Cadastrada!");
+                                vendasNum++;
+                                sleep(2000);
+                            }
+                            else {
+                                print("Código Inexistente!");
+                                sleep(2000);
+                            }
                         }
                         else {
-                            print("Código Inexistente!");
-                            sleep(2000);
+                            print("Número máximo de vendas atingido!");
                         }
                     }
                     else {
-                        print("Número máximo de vendas atingido!");
+                        print("Nenhum produto cadastrado!");
+                        sleep(2000);
                     }
+                    
+                    break;
+                
+                case 4: //relatório
 
                     break;
-                case 4: //relatório
-                    break;
+                
                 case 5:
                     exit = true;
+
                     break;
+                
                 default:
                     print("Número inserido é invalido!");
                     sleep(2000);
