@@ -73,7 +73,8 @@ public class SubmarinoYellow {
                             print((i + 1) + "º Produto:\nNome - " + nomes[i] + "\nValor - " + valores[i] + "\n");
                         }
                         
-                        sleep(2000);
+                        print("Insira algo para sair:");
+                        String sair = entrada.next();
                      }
                     break;
                 case 3: //venda
