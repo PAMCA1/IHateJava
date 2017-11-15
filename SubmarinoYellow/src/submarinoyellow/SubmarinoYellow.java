@@ -99,7 +99,7 @@ public class SubmarinoYellow {
                         }
                     }
                     else {
-                        print("Número máximo de compras atingido!");
+                        print("Número máximo de vendas atingido!");
                     }
 
                     break;
