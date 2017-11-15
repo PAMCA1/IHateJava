@@ -11,7 +11,7 @@ public class SubmarinoYellow {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        int menu, prodNum = 0, vendasNum = 0, vendaTemp;
+        int menu, prodNum = 0, vendasNum = 0;
         boolean exit = false;
 
         int[] codigos = {1,2,3,4,5,6,7,8,9,10};
@@ -31,25 +31,31 @@ public class SubmarinoYellow {
             switch(menu) {
                 case 1: //cadastro
                     if(prodNum<10) {
+                        Double valorTemp;
+
                         print("Insira o nome do produto (" + (prodNum + 1) + "/10):");
                         nomes[prodNum] = entrada.next();
                         
                         print("\nInsira o valor do produto (" + (prodNum + 1) + "/10):");
-                        valores[prodNum] = entrada.nextDouble();
-                        if(valores[prodNum] <= 0){
-                            clean();
-                            print("Valor Inválido");
-                            sleep(2000);
-                            break;
-                        }
+                        valorTemp = entrada.nextDouble();
+
+                        if(valorTemp > 0){
+                            valores[prodNum] = valorTemp;
                         
-                        clean();
-                      
-                        print("CADASTRO EFETUADO!");
+                            clean();
+                        
+                            print("CADASTRO EFETUADO!");
+                            prodNum++;
 
-                        prodNum++;
+                            sleep(2000);
+                        }
+                        else {
+                            clean();
 
-                        sleep(2000);
+                            print("Valor Inválido");
+
+                            sleep(2000);
+                        }
                     }
                     else {
                         print("Número máximo de cadastros atingido!");
@@ -64,7 +70,7 @@ public class SubmarinoYellow {
                     } else {
 
                         for (i = 0; i < prodNum; i++) {
-                            print((i + 1) + "º Produto " + nomes[i] + "Valor: " + valores[i]);
+                            print((i + 1) + "º Produto:\nNome - " + nomes[i] + "\nValor - " + valores[i] + "\n");
                         }
                         
                         sleep(2000);
@@ -73,14 +79,16 @@ public class SubmarinoYellow {
                 case 3: //venda
                     //listar os produtos aqui também
 
+                    int vendaTemp;
+
                     if(vendasNum<100) {
                         print("Insira o código do produto vendido:");
 
                         vendaTemp = entrada.nextInt();
 
-                        if(vendas[vendasNum] < (prodNum + 1)) {
+                        if(vendaTemp < (prodNum + 1)) {
                             vendas[vendasNum] = vendaTemp;
-                            print("Venda Cadastrada!" + vendas[vendasNum]);
+                            print("Venda Cadastrada!");
                             vendasNum++;
                             sleep(2000);
                         }
