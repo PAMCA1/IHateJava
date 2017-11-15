@@ -45,7 +45,7 @@ public class SubmarinoYellow {
                         
                         clean();
                       
-                        print("CADASTRO EFETUADO!")
+                        print("CADASTRO EFETUADO!");
 
                         prodNum++;
 
@@ -67,7 +67,7 @@ public class SubmarinoYellow {
                             print((i + 1) + "º Produto " + nomes[i] + "Valor: " + valores[i]);
                             sleep(2000);
                         }
-                    }
+                     }
                     break;
                 case 3: //venda
                     //listar os produtos aqui também
