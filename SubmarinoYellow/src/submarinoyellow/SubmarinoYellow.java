@@ -30,16 +30,15 @@ public class SubmarinoYellow {
                     if(prodNum<10) {
                         print("Insira o nome do produto (" + (prodNum + 1) + "/10):");
                         nomes[prodNum] = entrada.next();
-                        if(nomes[prodNum] == ""){
-                            print("Nome Inválido");
-                        }
                         
                         print("\nInsira o valor do produto (" + (prodNum + 1) + "/10):");
                         valores[prodNum] = entrada.nextDouble();
                         if(valores[prodNum] <= 0){
+                            clean();
                             print("Valor Inválido");
+                            sleep(2000);
+                            break;
                         }
-                        break;
                         
                         clean();
 
