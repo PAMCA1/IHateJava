@@ -72,7 +72,9 @@ public class SubmarinoYellow {
                     break;
                 case 3: //venda
                     //listar os produtos aqui também
-
+                    for (i = 0; i < prodNum; i++) {
+                            print((i + 1) + "º Produto " + nomes[i] + "Valor: " + valores[i]);
+                        }
                     if(vendasNum<100) {
                         print("Insira o código do produto vendido:");
 
