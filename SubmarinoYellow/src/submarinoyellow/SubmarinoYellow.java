@@ -29,7 +29,7 @@ public class SubmarinoYellow {
             clean();
             
             switch(menu) {
-                case 1:
+                case 1: //cadastro
                     if(prodNum<10) {
                         print("Insira o nome do produto (" + (prodNum + 1) + "/10):");
                         nomes[prodNum] = entrada.next();
@@ -55,9 +55,9 @@ public class SubmarinoYellow {
                         sleep(2000);
                     }
                     break;
-                case 2:
+                case 2: //listagem
                     break;
-                case 3:
+                case 3: //venda
                     //listar os produtos aqui também
 
                     if(vendasNum<100) {
@@ -81,7 +81,7 @@ public class SubmarinoYellow {
                     }
 
                     break;
-                case 4:
+                case 4: //relatório
                     break;
                 case 5:
                     exit = true;
