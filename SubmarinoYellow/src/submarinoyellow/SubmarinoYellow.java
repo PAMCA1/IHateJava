@@ -35,6 +35,7 @@ public class SubmarinoYellow {
 
                         print("Insira o nome do produto (" + (prodNum + 1) + "/10):");
                         nomes[prodNum] = entrada.next();
+                        nomes[prodNum] += entrada.nextLine();
                         
                         print("\nInsira o valor do produto (" + (prodNum + 1) + "/10):");
                         valorTemp = entrada.nextDouble();
@@ -84,7 +85,7 @@ public class SubmarinoYellow {
                             vendaTemp = entrada.nextInt();
 
                             clean();
-                            
+
                             if(vendaTemp < (prodNum + 1)) {
                                 vendas[vendasNum] = vendaTemp;
                                 print("Compra Cadastrada!");
