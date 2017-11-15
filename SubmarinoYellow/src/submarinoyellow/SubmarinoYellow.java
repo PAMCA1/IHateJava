@@ -27,18 +27,24 @@ public class SubmarinoYellow {
             
             switch(menu) {
                 case 1:
-                    print("Insira o nome do produto:");
-                    nomes[prodNum] = entrada.next();
+                    if(prodNum<10) {
+                        print("Insira o nome do produto (" + (prodNum + 1) + "/10):");
+                        nomes[prodNum] = entrada.next();
 
-                    print("\nInsira o valor do produto:");
-                    valores[prodNum] = entrada.nextDouble();
+                        print("\nInsira o valor do produto (" + (prodNum + 1) + "/10):");
+                        valores[prodNum] = entrada.nextDouble();
 
-                    clean();
+                        clean();
 
-                    print("CADASTRO EFETUADO!\n\nCódigo - " + codigos[prodNum] + "\nNome - " + nomes[prodNum] + "\nValor - " + valores[prodNum]);
+                        print("CADASTRO EFETUADO!\n\nCódigo - " + codigos[prodNum] + "\nNome - " + nomes[prodNum] + "\nValor - " + valores[prodNum]);
 
-                    prodNum++;
-                    sleep(2000);
+                        prodNum++;
+                        sleep(2000);
+                    }
+                    else {
+                        print("Número máximo de cadastros atingido!");
+                        sleep(2000);
+                    }
                     break;
                 case 2:
                     break;
