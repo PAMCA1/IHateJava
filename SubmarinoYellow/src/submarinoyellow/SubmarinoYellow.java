@@ -8,10 +8,14 @@ import java.util.concurrent.TimeUnit;
 public class SubmarinoYellow {
 
     public static void main(String[] args) {
-        int menu;
+        Scanner entrada = new Scanner(System.in);
+
+        int menu, prodNum = 0;
         boolean exit = false;
 
-        Scanner entrada = new Scanner(System.in);
+        int[] codigos = {1,2,3,4,5,6,7,8,9,10};
+        String[] nomes = new String[10];
+        Double[] valores = new Double[10];
 
         do {
             clean();
@@ -19,8 +23,22 @@ public class SubmarinoYellow {
             print("========= Menu de Opções =========\n1 - Cadastrar produto\n2 - Listar produtos\n3 - Vender produto\n4 - Relatório de vendas\n5 - Sair\nDigite uma opção:");
             menu = entrada.nextInt();
             
+            clean();
+            
             switch(menu) {
                 case 1:
+                    print("Insira o nome do produto:");
+                    nomes[prodNum] = entrada.next();
+
+                    print("\nInsira o valor do produto:");
+                    valores[prodNum] = entrada.nextDouble();
+
+                    clean();
+
+                    print("CADASTRO EFETUADO!\n\nCódigo - " + codigos[prodNum] + "\nNome - " + nomes[prodNum] + "\nValor - " + valores[prodNum]);
+
+                    prodNum++;
+                    sleep(2000);
                     break;
                 case 2:
                     break;
@@ -32,7 +50,6 @@ public class SubmarinoYellow {
                     exit = true;
                     break;
                 default:
-                    clean();
                     print("Número inserido é invalido!");
                     sleep(2000);
             }
