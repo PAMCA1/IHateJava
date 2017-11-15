@@ -44,8 +44,9 @@ public class SubmarinoYellow {
                         }
                         
                         clean();
+                      
+                        print("CADASTRO EFETUADO!")
 
-                        print("CADASTRO EFETUADO!\n\nCódigo - " + codigos[prodNum] + "\nNome - " + nomes[prodNum] + "\nValor - " + valores[prodNum]);
                         prodNum++;
 
                         sleep(2000);
@@ -56,6 +57,17 @@ public class SubmarinoYellow {
                     }
                     break;
                 case 2: //listagem
+                    int i;
+                    if (prodNum == 0) {
+                        print("Nenhum produto cadastrado!");
+
+                    } else {
+
+                        for (i = 0; i < prodNum; i++) {
+                            print((i + 1) + "º Produto " + nomes[i] + "Valor: " + valores[i]);
+                            sleep(2000);
+                        }
+                    }
                     break;
                 case 3: //venda
                     //listar os produtos aqui também
