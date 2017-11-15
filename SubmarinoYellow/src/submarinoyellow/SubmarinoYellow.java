@@ -11,12 +11,14 @@ public class SubmarinoYellow {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        int menu, prodNum = 0;
+        int menu, prodNum = 0, vendasNum = 0, vendaTemp;
         boolean exit = false;
 
         int[] codigos = {1,2,3,4,5,6,7,8,9,10};
         String[] nomes = new String[10];
         Double[] valores = new Double[10];
+
+        int[] vendas = new int[100];
 
         do {
             clean();
@@ -44,8 +46,8 @@ public class SubmarinoYellow {
                         clean();
 
                         print("CADASTRO EFETUADO!\n\nCódigo - " + codigos[prodNum] + "\nNome - " + nomes[prodNum] + "\nValor - " + valores[prodNum]);
-
                         prodNum++;
+
                         sleep(2000);
                     }
                     else {
@@ -56,6 +58,28 @@ public class SubmarinoYellow {
                 case 2:
                     break;
                 case 3:
+                    //listar os produtos aqui também
+
+                    if(vendasNum<100) {
+                        print("Insira o código do produto vendido:");
+
+                        vendaTemp = entrada.nextInt();
+
+                        if(vendas[vendasNum] < (prodNum + 1)) {
+                            vendas[vendasNum] = vendaTemp;
+                            print("Venda Cadastrada!" + vendas[vendasNum]);
+                            vendasNum++;
+                            sleep(2000);
+                        }
+                        else {
+                            print("Código Inexistente!");
+                            sleep(2000);
+                        }
+                    }
+                    else {
+                        print("Número máximo de vendas atingido!");
+                    }
+
                     break;
                 case 4:
                     break;
@@ -72,9 +96,9 @@ public class SubmarinoYellow {
 
     public static void print(String string) {  //atalho para o System.out.println()
         try {  
-            System.out.println(new String(string.getBytes("ISO-8859-1"), "UTF-8"));
+            System.out.println(new String(string.getBytes("ISO-8859-1"), "UTF-8")); //codifica para aceitar acentos e caracteres do latim
         } catch (UnsupportedEncodingException e) {
-            System.out.println("Tipo incorreta de codificação!");
+            System.out.println("Tipo incorreto de codificação!");
         }
     }
 
