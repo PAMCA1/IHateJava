@@ -11,12 +11,14 @@ public class SubmarinoYellow {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        int menu, prodNum = 0;
+        int menu, prodNum = 0, vendasNum = 0, vendaTemp;
         boolean exit = false;
 
         int[] codigos = {1,2,3,4,5,6,7,8,9,10};
         String[] nomes = new String[10];
         Double[] valores = new Double[10];
+
+        int[] vendas = new int[100];
 
         do {
             clean();
@@ -27,7 +29,7 @@ public class SubmarinoYellow {
             clean();
             
             switch(menu) {
-                case 1:
+                case 1: //cadastro
                     if(prodNum<10) {
                         print("Insira o nome do produto (" + (prodNum + 1) + "/10):");
                         nomes[prodNum] = entrada.next();
@@ -42,10 +44,11 @@ public class SubmarinoYellow {
                         }
                         
                         clean();
-
-                        print("CADASTRO EFETUADO");
+                      
+                        print("CADASTRO EFETUADO!");
 
                         prodNum++;
+
                         sleep(2000);
                     }
                     else {
@@ -53,7 +56,7 @@ public class SubmarinoYellow {
                         sleep(2000);
                     }
                     break;
-                case 2:
+                case 2: //listagem
                     int i;
                     if (prodNum == 0) {
                         print("Nenhum produto cadastrado!");
@@ -66,9 +69,31 @@ public class SubmarinoYellow {
                         }
                      }
                     break;
-                case 3:
+                case 3: //venda
+                    //listar os produtos aqui também
+
+                    if(vendasNum<100) {
+                        print("Insira o código do produto vendido:");
+
+                        vendaTemp = entrada.nextInt();
+
+                        if(vendas[vendasNum] < (prodNum + 1)) {
+                            vendas[vendasNum] = vendaTemp;
+                            print("Venda Cadastrada!" + vendas[vendasNum]);
+                            vendasNum++;
+                            sleep(2000);
+                        }
+                        else {
+                            print("Código Inexistente!");
+                            sleep(2000);
+                        }
+                    }
+                    else {
+                        print("Número máximo de vendas atingido!");
+                    }
+
                     break;
-                case 4:
+                case 4: //relatório
                     break;
                 case 5:
                     exit = true;
@@ -83,9 +108,9 @@ public class SubmarinoYellow {
 
     public static void print(String string) {  //atalho para o System.out.println()
         try {  
-            System.out.println(new String(string.getBytes("ISO-8859-1"), "UTF-8"));
+            System.out.println(new String(string.getBytes("ISO-8859-1"), "UTF-8")); //codifica para aceitar acentos e caracteres do latim
         } catch (UnsupportedEncodingException e) {
-            System.out.println("Tipo incorreta de codificação!");
+            System.out.println("Tipo incorreto de codificação!");
         }
     }
 
