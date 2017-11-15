@@ -83,13 +83,13 @@ public class SubmarinoYellow {
                     int vendaTemp;
 
                     if(vendasNum<100) {
-                        print("Insira o código do produto vendido:");
+                        print("Insira o código do produto que deseja comprar:");
 
                         vendaTemp = entrada.nextInt();
 
                         if(vendaTemp < (prodNum + 1)) {
                             vendas[vendasNum] = vendaTemp;
-                            print("Venda Cadastrada!");
+                            print("Compra Cadastrada!");
                             vendasNum++;
                             sleep(2000);
                         }
@@ -99,7 +99,7 @@ public class SubmarinoYellow {
                         }
                     }
                     else {
-                        print("Número máximo de vendas atingido!");
+                        print("Número máximo de compras atingido!");
                     }
 
                     break;
