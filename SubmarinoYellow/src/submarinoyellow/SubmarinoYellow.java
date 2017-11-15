@@ -65,8 +65,9 @@ public class SubmarinoYellow {
 
                         for (i = 0; i < prodNum; i++) {
                             print((i + 1) + "º Produto " + nomes[i] + "Valor: " + valores[i]);
-                            sleep(2000);
                         }
+                        
+                        sleep(2000);
                      }
                     break;
                 case 3: //venda
