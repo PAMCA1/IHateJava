@@ -43,7 +43,7 @@ public class SubmarinoYellow {
                         
                         clean();
 
-                        print("CADASTRO EFETUADO!")
+                        print("CADASTRO EFETUADO!\n\nCódigo - " + codigos[prodNum] + "\nNome - " + nomes[prodNum] + "\nValor - " + valores[prodNum]);
 
                         prodNum++;
                         sleep(2000);
