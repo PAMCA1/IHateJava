@@ -3,7 +3,6 @@
 
 package submarinoyellow;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 import java.io.*;
 
 public class SubmarinoYellow {
@@ -126,8 +125,6 @@ public class SubmarinoYellow {
     }
 
     public static void listar(int num, String[] nome, Double[] valor) { //método para listagem dos itens cadastrados
-        Scanner entrada = new Scanner(System.in);
-
         if (num == 0) {
             print("Nenhum produto cadastrado!");
         }
@@ -154,7 +151,6 @@ public class SubmarinoYellow {
         for(int i = 0; i<50; i++) {
             print("\n");
         }
-        return;
     }
 
     public static void sleep(int miliseconds) { //intorrompe o programa por x milisegundos
