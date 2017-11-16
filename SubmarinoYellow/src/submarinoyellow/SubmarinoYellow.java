@@ -9,6 +9,7 @@ public class SubmarinoYellow {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
+        Scanner entradaS = new Scanner(System.in);
 
         int menu, prodNum = 0, vendasNum = 0;
         boolean exit = false;
@@ -33,8 +34,8 @@ public class SubmarinoYellow {
                         Double valorTemp;
 
                         print("Insira o nome do produto (" + (prodNum + 1) + "/10):");
-                        nomes[prodNum] = entrada.next();
-                        nomes[prodNum] += entrada.nextLine();
+                        nomes[prodNum] = entradaS.nextLine();
+                        
                         
                         print("\nInsira o valor do produto (" + (prodNum + 1) + "/10):");
                         valorTemp = entrada.nextDouble();
@@ -68,7 +69,7 @@ public class SubmarinoYellow {
                     listar(prodNum,nomes,valores);
 
                     print("Insira algo para sair:");
-                    String sair = entrada.next();
+                    String sair = entradaS.nextLine();
 
                     break;         
                 
