@@ -8,5 +8,5 @@
 <h2>ALTERAÇÕES PENDENTES:</h2>
 
 <ul>
-  <li>Verificar erro do .next();</li>
+  <li></li>
 </ul>
