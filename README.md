@@ -5,7 +5,7 @@
   <li>QA (Verificar por erros no programa);</li>
 </ul>
 
-<h2 style="color:red">ALTERAÇÕES PENDENTES:</h2>
+<h2>ALTERAÇÕES PENDENTES:</h2>
 
 <ul>
   <li></li>
