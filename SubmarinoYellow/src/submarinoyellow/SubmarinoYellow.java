@@ -19,15 +19,16 @@ public class SubmarinoYellow {
         Double[] valores = new Double[10];
 
         int[] vendas = new int[100];
+        int[] compras = new int[10];
 
         do {
             clean();
 
             print("========= Menu de Opções =========\n1 - Cadastrar produto\n2 - Listar produtos\n3 - Vender produto\n4 - Relatório de vendas\n5 - Sair\nDigite uma opção:");
             menu = entrada.nextInt();
-            
+
             clean();
-            
+
             switch(menu) {
                 case 1: //cadastro
                     if(prodNum<10) {
@@ -35,16 +36,16 @@ public class SubmarinoYellow {
 
                         print("Insira o nome do produto (" + (prodNum + 1) + "/10):");
                         nomes[prodNum] = entradaS.nextLine();
-                        
-                        
+
+
                         print("\nInsira o valor do produto (" + (prodNum + 1) + "/10):");
                         valorTemp = entrada.nextDouble();
 
                         if(valorTemp > 0){
                             valores[prodNum] = valorTemp;
-                        
+
                             clean();
-                        
+
                             print("CADASTRO EFETUADO!");
                             prodNum++;
 
@@ -71,8 +72,8 @@ public class SubmarinoYellow {
                     print("Insira algo para sair:");
                     String sair = entradaS.nextLine();
 
-                    break;         
-                
+                    break;
+
                 case 3: //venda
                     if(prodNum!=0) {
                         listar(prodNum,nomes,valores);
@@ -88,6 +89,7 @@ public class SubmarinoYellow {
 
                             if(vendaTemp < (prodNum + 1)) {
                                 vendas[vendasNum] = vendaTemp;
+                                compras[vendaTemp - 1]++;
                                 print("Compra Cadastrada!");
                                 vendasNum++;
                                 sleep(2000);
@@ -105,18 +107,33 @@ public class SubmarinoYellow {
                         print("Nenhum produto cadastrado!");
                         sleep(2000);
                     }
-                    
-                    break;
-                
-                case 4: //relatório
 
                     break;
-                
+
+                case 4: //relatório
+                    print("=== Relatório de Vendas ===");
+
+                    for (int i = 0; i < prodNum; i++) {
+                        if (compras[i] > 0) {
+                            print("===> CÓDIGO: " + (i + 1));
+                            print("PRODUTO: " + nomes[i]);
+                            print("Nº DE VENDAS: " + compras[i]);
+                            print("PREÇO: " + valores[i]);
+                            print("TOTAL: " + (compras[i] * valores[i]));
+                            print("");
+                        }
+                    }
+
+                    print("\nInsira algo para sair:");
+                    sair = entradaS.nextLine();
+
+                    break;
+
                 case 5:
                     exit = true;
 
                     break;
-                
+
                 default:
                     print("Número inserido é invalido!");
                     sleep(2000);
@@ -141,7 +158,7 @@ public class SubmarinoYellow {
 
 
     public static void print(String string) {  //atalho para o System.out.println()
-        try {  
+        try {
             System.out.println(new String(string.getBytes("ISO-8859-1"), "UTF-8")); //codifica para aceitar acentos e caracteres do latim
         } catch (UnsupportedEncodingException e) {
             System.out.println("Tipo incorreto de codificação!");
@@ -157,7 +174,7 @@ public class SubmarinoYellow {
     public static void sleep(int miliseconds) { //intorrompe o programa por x milisegundos
         try {
             Thread.sleep(miliseconds);
-        } 
+        }
         catch(InterruptedException e) {
 
         }
