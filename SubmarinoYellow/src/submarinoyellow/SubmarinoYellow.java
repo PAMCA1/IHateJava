@@ -20,6 +20,18 @@ public class SubmarinoYellow {
 
         int[] vendas = new int[100];
 
+        clean();
+
+        print("Projeto \"Loja de Produtos\" - Professora Simone de Abreu | Contrução de Algoritmos\n");
+        print("Nome: Douglas RA:");
+        print("Nome: Nathalia RA:");
+        print("Nome: Thiago RA:");
+        print("Nome: Thiago Vinícius Pessia RA: 21027210");
+        print("Nome: Victor RA:");
+
+        print("\nAperte enter para continuar:");
+        String sair = entradaS.nextLine();
+
         do {
             clean();
 
@@ -69,7 +81,7 @@ public class SubmarinoYellow {
                     listar(prodNum,codigos,nomes,valores);
 
                     print("Aperte enter para sair:");
-                    String sair = entradaS.nextLine();
+                    sair = entradaS.nextLine();
 
                     break;
 
