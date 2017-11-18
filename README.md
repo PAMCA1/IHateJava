@@ -5,8 +5,14 @@
   <li>QA (Verificar por erros no programa);</li>
 </ul>
 
-<h2>ALTERAÇÕES PENDENTES:</h2>
+<h2 class="teste">ALTERAÇÕES PENDENTES:</h2>
 
 <ul>
   <li></li>
 </ul>
+
+<style>
+  .teste {
+    color: red;
+  }
+</style>
