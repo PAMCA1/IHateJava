@@ -67,16 +67,16 @@ public class SubmarinoYellow {
                     break;
 
                 case 2: //listagem
-                    listar(prodNum,nomes,valores);
+                    listar(prodNum,codigos,nomes,valores);
 
-                    print("Insira algo para sair:");
+                    print("Aperte enter para sair:");
                     String sair = entradaS.nextLine();
 
                     break;
 
                 case 3: //venda
                     if(prodNum!=0) {
-                        listar(prodNum,nomes,valores);
+                        listar(prodNum,codigos,nomes,valores);
 
                         int vendaTemp;
 
@@ -111,20 +111,26 @@ public class SubmarinoYellow {
                     break;
 
                 case 4: //relatório
-                    print("=== Relatório de Vendas ===");
+                    if(vendas[0]!=0) {
 
-                    for (int i = 0; i < prodNum; i++) {
-                        if (compras[i] > 0) {
-                            print("===> CÓDIGO: " + (i + 1));
-                            print("PRODUTO: " + nomes[i]);
-                            print("Nº DE VENDAS: " + compras[i]);
-                            print("PREÇO: " + valores[i]);
-                            print("TOTAL: " + (compras[i] * valores[i]));
-                            print("");
+                        print("=== Relatório de Vendas ===");
+
+                        for (int i = 0; i < prodNum; i++) {
+                            if (compras[i] > 0) {
+                                print("Código: " + (i + 1));
+                                print("Produto: " + nomes[i]);
+                                print("Nº de Vendas: " + compras[i]);
+                                print("Preço: " + valores[i]);
+                                print("Total: " + (compras[i] * valores[i]) + "\n");
+                            }
                         }
+
+                    }
+                    else {
+                        print("Nenhuma venda cadastrada!");
                     }
 
-                    print("\nInsira algo para sair:");
+                    print("\nAperte enter para sair:");
                     sair = entradaS.nextLine();
 
                     break;
@@ -142,13 +148,13 @@ public class SubmarinoYellow {
         } while(exit != true);
     }
 
-    public static void listar(int num, String[] nome, Double[] valor) { //método para listagem dos itens cadastrados
+    public static void listar(int num, int[] codigo, String[] nome, Double[] valor) { //método para listagem dos itens cadastrados
         if (num == 0) {
             print("Nenhum produto cadastrado!");
         }
         else {
             for (int i = 0; i < num; i++) {
-                print((i + 1) + "º Produto:\nNome - " + nome[i] + "\nValor - " + valor[i] + "\n");
+                print("Código: " + codigo[i] + "\nNome: " + nome[i] + "\nValor: " + valor[i] + "\n");
             }
         }
     }
