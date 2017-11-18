@@ -19,7 +19,6 @@ public class SubmarinoYellow {
         Double[] valores = new Double[10];
 
         int[] vendas = new int[100];
-        int[] compras = new int[10];
 
         do {
             clean();
@@ -89,7 +88,6 @@ public class SubmarinoYellow {
 
                             if(vendaTemp < (prodNum + 1)) {
                                 vendas[vendasNum] = vendaTemp;
-                                compras[vendaTemp - 1]++;
                                 print("Compra Cadastrada!");
                                 vendasNum++;
                                 sleep(2000);
@@ -116,12 +114,18 @@ public class SubmarinoYellow {
                         print("=== Relatório de Vendas ===");
 
                         for (int i = 0; i < prodNum; i++) {
-                            if (compras[i] > 0) {
+                            int comprado = 0;
+                            for(int j = 0; j<vendas.length; j++) {
+                                if(vendas[j] == (i + 1)) {
+                                    comprado++;
+                                }
+                            }
+                            if (comprado > 0) {
                                 print("Código: " + (i + 1));
                                 print("Produto: " + nomes[i]);
-                                print("Nº de Vendas: " + compras[i]);
+                                print("Nº de Vendas: " + comprado);
                                 print("Preço: " + valores[i]);
-                                print("Total: " + (compras[i] * valores[i]) + "\n");
+                                print("Total: " + (comprado * valores[i]) + "\n");
                             }
                         }
 
