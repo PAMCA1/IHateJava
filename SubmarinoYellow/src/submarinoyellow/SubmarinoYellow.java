@@ -123,7 +123,7 @@ public class SubmarinoYellow {
                     break;
 
                 case 4: //relatório
-                    if(vendas[0]!=0) {
+                    if(vendas[0]!=0) { //verifica se alguma venda já foi cadastrada
 
                         print("=== Relatório de Vendas ===\n");
 
