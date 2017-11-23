@@ -29,7 +29,7 @@ public class SubmarinoYellow {
         print("Nome: Nathalia Abramson Friederichs RA: 21028220");
         print("Nome: Thiago Araujo Rodrigues RA: 21033797");
         print("Nome: Thiago Vinícius Pessia RA: 21027210");
-        print("Nome: Victor RA:");
+        print("Nome: Victor Luis X Santicioli RA:20837821 ");
 
         continuar();
 
