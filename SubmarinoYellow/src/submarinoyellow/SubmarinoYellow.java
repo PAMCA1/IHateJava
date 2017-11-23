@@ -25,8 +25,8 @@ public class SubmarinoYellow {
         clean(); //função que "limpa" o console
 
         print("Projeto \"Loja de Produtos\" - Professora Simone de Abreu | Contrução de Algoritmos\n"); //print é um atalho para System.out.println(), que também altera os caracteres para UTF-8
-        print("Nome: Douglas RA:");
-        print("Nome: Nathalia RA:");
+        print("Nome: Douglas Santos Salles RA: 20950019");
+        print("Nome: Nathalia Abramson Friederichs RA: 21028220");
         print("Nome: Thiago Araujo Rodrigues RA: 21033797");
         print("Nome: Thiago Vinícius Pessia RA: 21027210");
         print("Nome: Victor RA:");
