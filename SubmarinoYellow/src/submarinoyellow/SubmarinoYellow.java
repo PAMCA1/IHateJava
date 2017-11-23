@@ -3,7 +3,6 @@
 
 package submarinoyellow;
 import java.util.Scanner;
-import java.io.*;
 
 public class SubmarinoYellow {
 
@@ -182,12 +181,7 @@ public class SubmarinoYellow {
 
 
     public static void print(String string) {  //atalho para o System.out.println()
-        //try {
-            System.out.println(string);
-        //    System.out.println(new String(string.getBytes("ISO-8859-1"), "UTF-8")); //codifica para aceitar acentos e caracteres do latim
-        //} catch (UnsupportedEncodingException e) {
-        //    System.out.println("Tipo incorreto de codificação!");
-        //}
+        System.out.println(string);
     }
 
     public static void clean() {  //atalho para limpar o console
