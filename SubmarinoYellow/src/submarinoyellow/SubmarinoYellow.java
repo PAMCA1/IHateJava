@@ -1,6 +1,3 @@
-//compile: javac src/submarinoyellow/SubmarinoYellow.java -d build/classes
-//run: java -classpath build/classes submarinoyellow/SubmarinoYellow
-
 package submarinoyellow;
 import java.util.Scanner;
 
